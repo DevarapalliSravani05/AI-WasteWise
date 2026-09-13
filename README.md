@@ -1,22 +1,4 @@
-Perfect 👍 Let's create the **professional `README.md`** for your GitHub repository.
 
-### 1. Open your project
-
-In VS Code:
-
-```text
-AI-WasteWise
-```
-
-Create/open:
-
-```text
-README.md
-```
-
-### 2. Paste this content
-
-````markdown
 # 🌱 AI WasteWise
 
 ### AI-Powered Waste Segregation & Sustainability Assistant
