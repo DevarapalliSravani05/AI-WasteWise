@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI WasteWise | Smart Waste Segregation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            ♻️ <span>AI WasteWise</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🌱 AI for Sustainability
+            </div>
+
+            <h1>
+                Make Every Waste Item
+                <span>Count.</span>
+            </h1>
+
+            <p>
+                AI WasteWise helps you identify waste,
+                understand its category, and choose the
+                right disposal method for a more sustainable future.
+            </p>
+
+            <a href="#analyzer" class="primary-btn">
+                Analyze Waste →
+            </a>
+
+        </div>
+
+        <div class="hero-icon">
+            ♻️
+        </div>
+
+    </section>
+
+
+    <!-- Analyzer Section -->
+    <section id="analyzer" class="analyzer-section">
+
+        <div class="section-heading">
+            <span>AI WASTE ANALYZER</span>
+
+            <h2>
+                What type of waste do you have?
+            </h2>
+
+            <p>
+                Enter a waste item below and let AI WasteWise
+                suggest the appropriate category and disposal method.
+            </p>
+        </div>
+
+
+        <div class="analyzer-card">
+
+            <label for="wasteInput">
+                Enter Waste Item
+            </label>
+
+            <div class="input-container">
+
+    <input
+        type="text"
+        id="wasteInput"
+        placeholder="Example: plastic bottle"
+    >
+
+    <button onclick="analyzeWaste()">
+        Analyze
+    </button>
+
+</div>
+
+
+<!-- Image Upload -->
+
+<div class="image-upload-section">
+
+    <div class="upload-divider">
+        <span>OR</span>
+    </div>
+
+    <label class="upload-box" for="wasteImage">
+
+        <div class="upload-icon">
+            📷
+        </div>
+
+        <h3>
+            Upload a Waste Image
+        </h3>
+
+        <p>
+            Let AI identify the waste from an image
+        </p>
+
+        <span class="upload-button">
+            Choose Image
+        </span>
+
+        <input
+            type="file"
+            id="wasteImage"
+            accept="image/*"
+            onchange="previewImage(event)"
+        >
+
+    </label>
+
+
+    <!-- Image Preview -->
+
+    <div id="imagePreviewContainer" class="image-preview hidden">
+
+        <img
+            id="imagePreview"
+            src=""
+            alt="Selected waste image"
+        >
+
+        <div class="preview-info">
+
+            <span id="imageName">
+                Image selected
+            </span>
+
+            <button
+                type="button"
+                onclick="analyzeImage()"
+            >
+                🤖 Analyze Image
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+            <div class="examples">
+
+                <span>Try:</span>
+
+                <button onclick="setWaste('plastic bottle')">
+                    Plastic Bottle
+                </button>
+
+                <button onclick="setWaste('banana peel')">
+                    Banana Peel
+                </button>
+
+                <button onclick="setWaste('old battery')">
+                    Battery
+                </button>
+
+                <button onclick="setWaste('paper')">
+                    Paper
+                </button>
+
+            </div>
+
+
+            <!-- Result -->
+            <div id="result" class="result hidden">
+
+                <div class="result-header">
+                    <div id="resultIcon" class="result-icon">
+                        ♻️
+                    </div>
+
+                    <div>
+                        <span class="result-label">
+                            AI Classification
+                        </span>
+
+                        <h3 id="resultCategory">
+                            Recyclable
+                        </h3>
+                    </div>
+                </div>
+
+
+                <div class="result-details">
+
+    <div class="detail-box">
+        <span>Waste Type</span>
+        <strong id="wasteType">
+            Plastic
+        </strong>
+    </div>
+
+    <div class="detail-box">
+        <span>Disposal</span>
+        <strong id="disposal">
+            Recyclable Bin
+        </strong>
+    </div>
+
+    <div class="detail-box">
+        <span>AI Confidence</span>
+        <strong id="confidence">
+            High
+        </strong>
+    </div>
+
+</div>
+
+
+                <div class="recommendation">
+
+                    <h4>💡 AI Recommendation</h4>
+
+                    <p id="recommendationText">
+                        Rinse the bottle and place it
+                        in the appropriate recyclable
+                        waste collection.
+                    </p>
+
+                </div>
+
+
+                <div class="sustainability-tip">
+
+                    <h4>🌱 Sustainability Tip</h4>
+
+                    <p id="tipText">
+                        Choose reusable bottles to
+                        reduce single-use plastic waste.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-section">
+
+        <div class="section-heading">
+
+            <span>HOW IT WORKS</span>
+
+            <h2>
+                From Waste to the Right Action
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div class="step-icon">
+                    🗑️
+                </div>
+
+                <h3>
+                    Identify
+                </h3>
+
+                <p>
+                    Enter the waste item you want
+                    to dispose of.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <div class="step-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI Analysis
+                </h3>
+
+                <p>
+                    The system analyzes the item
+                    and identifies its waste category.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <div class="step-icon">
+                    ♻️
+                </div>
+
+                <h3>
+                    Take Action
+                </h3>
+
+                <p>
+                    Get a disposal recommendation
+                    and sustainability tip.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about-section">
+
+        <div class="about-content">
+
+            <span>
+                ABOUT AI WASTEWISE
+            </span>
+
+            <h2>
+                Technology for a Cleaner Tomorrow
+            </h2>
+
+            <p>
+                AI WasteWise is an AI-powered sustainability
+                concept designed to help people make better
+                waste-management decisions.
+            </p>
+
+            <p>
+                By providing simple and understandable
+                recommendations, the system aims to encourage
+                responsible consumption and waste segregation.
+            </p>
+
+        </div>
+
+
+        <div class="sdg-card">
+
+            <div class="sdg-number">
+                12
+            </div>
+
+            <div>
+                <h3>
+                    SDG 12
+                </h3>
+
+                <p>
+                    Responsible Consumption
+                    and Production
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Responsible AI Section -->
+
+<section class="responsible-section">
+
+    <div class="section-heading">
+
+        <span>RESPONSIBLE AI</span>
+
+        <h2>
+            AI You Can Trust
+        </h2>
+
+        <p>
+            AI WasteWise is designed to provide useful guidance
+            while recognizing uncertainty and protecting users.
+        </p>
+
+    </div>
+
+
+    <div class="responsible-grid">
+
+        <div class="responsible-card">
+
+            <div class="responsible-icon">
+                ⚖️
+            </div>
+
+            <h3>
+                Fairness
+            </h3>
+
+            <p>
+                Avoid biased assumptions and aim to provide
+                consistent waste-classification guidance.
+            </p>
+
+        </div>
+
+
+        <div class="responsible-card">
+
+            <div class="responsible-icon">
+                🔍
+            </div>
+
+            <h3>
+                Transparency
+            </h3>
+
+            <p>
+                The system displays an AI confidence level
+                and avoids presenting uncertain results as facts.
+            </p>
+
+        </div>
+
+
+        <div class="responsible-card">
+
+            <div class="responsible-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Privacy
+            </h3>
+
+            <p>
+                The prototype does not require personal
+                information to classify waste.
+            </p>
+
+        </div>
+
+
+        <div class="responsible-card">
+
+            <div class="responsible-icon">
+                🌱
+            </div>
+
+            <h3>
+                Ethical Use
+            </h3>
+
+            <p>
+                AI recommendations are intended to support
+                responsible waste decisions, not replace
+                official local waste-management guidance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer>
+
+        <div>
+            ♻️ <strong>AI WasteWise</strong>
+        </div>
+
+        <p>
+            AI for Sustainability • SDG 12
+        </p>
+
+        <p>
+            Designed as part of the AI + Sustainability
+            Virtual Internship
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
