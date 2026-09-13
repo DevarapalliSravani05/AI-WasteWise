@@ -8,6 +8,8 @@
    TEXT WASTE ANALYSIS
 ===================================== */
 
+const API_BASE_URL = "https://ai-wastewise-backend.onrender.com";
+
 async function analyzeWaste() {
 
     const input = document
@@ -85,7 +87,7 @@ async function analyzeWaste() {
          */
 
         const response = await fetch(
-            "http://localhost:5000/analyze-waste",
+    `${API_BASE_URL}/analyze-waste`,
             {
                 method: "POST",
 
@@ -593,7 +595,7 @@ async function analyzeImage() {
 
         const response =
             await fetch(
-                "http://localhost:5000/analyze-image",
+    `${API_BASE_URL}/analyze-image`,
                 {
 
                     method: "POST",
