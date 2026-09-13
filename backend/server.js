@@ -10,7 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 
 // Check API key
 if (!process.env.GEMINI_API_KEY) {
@@ -317,10 +318,10 @@ if (
    SERVER
 ===================================== */
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
 
     console.log(
-        `♻️ AI WasteWise backend running at http://localhost:${PORT}`
+        `♻️ AI WasteWise backend running on port ${PORT}`
     );
 
 });
